@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'library-browse',
     loadChildren: () => import('./library/library-browse/library-browse.module').then( m => m.LibraryBrowsePageModule)
+  },  {
+    path: 'attendance',
+    loadChildren: () => import('./attendance/attendance/attendance.module').then( m => m.AttendancePageModule)
   }
+
 ];
 
 @NgModule({

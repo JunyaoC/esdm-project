@@ -20,6 +20,7 @@ export class CoreServiceService {
 	public appPages = [
 		{ title: 'Home', url: 'home-page', icon: 'paper-plane' },
 		{ title: 'Library', url: 'library-browse', icon: 'paper-plane' },
+		{ title: 'Attendance', url: 'attendance', icon: 'paper-plane' },
 	];
 
 	constructor(
