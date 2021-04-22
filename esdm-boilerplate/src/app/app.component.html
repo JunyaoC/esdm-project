@@ -1,0 +1,27 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+
+        <ion-list id="inbox-list">
+          <ion-list-header>ESDM Library</ion-list-header>
+          <ion-note>{{cs.currentRole | titlecase}}</ion-note>
+          <ion-note *ngIf="!cs.currentRole">Please Log In to Continue.</ion-note>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of cs.appPages; let i = index">
+            <ion-item *ngIf="cs.currentRole" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+        </ion-list>
+
+
+        <ion-button expand="block" (click)="cs.logout()">LOGOUT</ion-button>
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

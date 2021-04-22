@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home-page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-card *ngFor="let page of cs.appPages" (click)="cs.navigateTo(page.url)">
+		<ion-card-content *ngIf="page.title != 'Home'">
+			<h1>{{page.title}}</h1>
+		</ion-card-content>
+	</ion-card>
+
+
+</ion-content>

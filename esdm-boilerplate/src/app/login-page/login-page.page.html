@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-list>
+
+		<ion-item>
+			<ion-input type="text" placeholder="Username" [(ngModel)]="cs.username" (keyup.enter)="cs.login()"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-input type="password" placeholder="Password" [(ngModel)]="cs.password" (keyup.enter)="cs.login()"></ion-input>
+		</ion-item>
+
+		<ion-button expand="block" color="success" (click)="cs.login()">Login</ion-button>
+
+	</ion-list>
+
+</ion-content>
