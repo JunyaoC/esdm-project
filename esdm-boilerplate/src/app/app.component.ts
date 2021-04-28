@@ -23,7 +23,7 @@ export class AppComponent {
         this.navCtrl.navigateRoot('/login-page');
       } else {
         this.cs.currentRole = res;
-        this.navCtrl.navigateRoot('/home-page');
+        this.navCtrl.navigateRoot('/attendance-page');
       }
     })
 
