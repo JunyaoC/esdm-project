@@ -13,6 +13,5 @@ export class AppComponent {
     private storage: Storage,
     public cs:CoreServiceService
     ) {
-
   }
 }
