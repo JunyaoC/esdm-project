@@ -25,6 +25,7 @@ export class CoreServiceService {
 		{ title: 'Home', url: 'home-page', icon: 'paper-plane' },
 		{ title: 'Library', url: 'library-browse', icon: 'paper-plane' },
 		{ title: 'Attendance', url: 'attendance', icon: 'paper-plane' },
+		{ title: 'Dining', url: 'dining', icon: 'paper-plane' },
 	];
 
 	constructor(
