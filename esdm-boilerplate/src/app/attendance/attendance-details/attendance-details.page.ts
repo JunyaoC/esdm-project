@@ -7,6 +7,8 @@ import { ModalController } from '@ionic/angular';
 })
 export class AttendanceDetailsPage implements OnInit {
 
+  editMode:boolean = false
+
   constructor(private modalController:ModalController) { }
 
   ngOnInit() {

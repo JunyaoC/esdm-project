@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { AttendanceDetailsPage} from '../attendance-details/attendance-details.page';
+import { AttendanceDetailsPage} from './attendance-details/attendance-details.page';
 
 @Component({
   selector: 'app-attendance',
