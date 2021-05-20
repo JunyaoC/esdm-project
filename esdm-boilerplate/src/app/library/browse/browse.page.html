@@ -1,0 +1,48 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>Browse</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<div class="wrapper">
+
+		<div style="display: flex; flex-direction: row-reverse;">
+			<ion-button *ngIf="cs.currentRole == 'admin'" (click)="createResource()">Create</ion-button>
+		</div>
+
+		<div>
+
+			<ion-card *ngFor="let resource of resourceArray">
+				<ion-card-header>
+					<ion-card-subtitle>{{resource.r_category}}</ion-card-subtitle>
+					<ion-card-title>{{resource.r_title}}</ion-card-title>
+				</ion-card-header>
+
+				<ion-card-content>
+					<div>
+
+						<div>
+							<p>{{resource.r_author}}</p>
+							<p>{{resource.r_date}}</p>
+						</div>
+
+						<div>
+
+							<ion-button (click)="downloadResource(resource)">View</ion-button>
+							<ion-button *ngIf="cs.currentRole == 'admin'" (click)="editResource(resource)">Edit</ion-button>
+							<ion-button *ngIf="cs.currentRole == 'admin'" (click)="deleteResource(resource)">Remove</ion-button>
+							
+						</div>
+						
+					</div>
+				</ion-card-content>
+			</ion-card>
+			
+		</div>
+
+		
+	</div>
+
+</ion-content>

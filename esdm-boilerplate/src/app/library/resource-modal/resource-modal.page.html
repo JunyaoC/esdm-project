@@ -1,0 +1,42 @@
+<div class="wrapper">
+
+	<div>
+		
+		<ion-item>
+			<ion-label position="floating">Title</ion-label>
+			<ion-input [(ngModel)]="title"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label position="floating">Category</ion-label>
+			<ion-input [(ngModel)]="category"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label position="floating">Author</ion-label>
+			<ion-input [(ngModel)]="author"></ion-input>
+		</ion-item>
+
+
+		<ion-item>
+			<ion-label position="floating">DD/MM/YYYY</ion-label>
+			<ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="date"></ion-datetime>
+		</ion-item>
+
+
+		<ion-item *ngIf="operation != 'editResource'">
+			<input id="uploadFile" type="file" #uploadFileInput name="" accept=".pdf" (change)="uploadFile($event)" [(ngModel)]="fileInput">
+		</ion-item>
+
+
+		<ion-item>
+			<ion-button *ngIf="operation == 'createResource'" color="success" (click)="createResource()">CREATE</ion-button>
+
+			<ion-button *ngIf="operation == 'editResource'" color="success" (click)="editResource()">Edit</ion-button>
+		</ion-item>
+
+
+
+	</div>
+	
+</div>

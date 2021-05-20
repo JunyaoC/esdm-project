@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { LibraryBrowsePage } from './library-browse.page';
+import { ResourceModalPage } from './resource-modal.page';
 
-describe('LibraryBrowsePage', () => {
-  let component: LibraryBrowsePage;
-  let fixture: ComponentFixture<LibraryBrowsePage>;
+describe('ResourceModalPage', () => {
+  let component: ResourceModalPage;
+  let fixture: ComponentFixture<ResourceModalPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LibraryBrowsePage ],
+      declarations: [ ResourceModalPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LibraryBrowsePage);
+    fixture = TestBed.createComponent(ResourceModalPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

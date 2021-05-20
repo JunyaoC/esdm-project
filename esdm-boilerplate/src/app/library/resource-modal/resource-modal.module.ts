@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LibraryBrowsePageRoutingModule } from './library-browse-routing.module';
+import { ResourceModalPageRoutingModule } from './resource-modal-routing.module';
 
-import { LibraryBrowsePage } from './library-browse.page';
+import { ResourceModalPage } from './resource-modal.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LibraryBrowsePageRoutingModule
+    ResourceModalPageRoutingModule
   ],
-  declarations: [LibraryBrowsePage]
+  declarations: [ResourceModalPage]
 })
-export class LibraryBrowsePageModule {}
+export class ResourceModalPageModule {}

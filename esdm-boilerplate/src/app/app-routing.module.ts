@@ -16,9 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./home-page/home-page.module').then( m => m.HomePagePageModule)
   },
   {
-    path: 'library-browse',
-    loadChildren: () => import('./library/library-browse/library-browse.module').then( m => m.LibraryBrowsePageModule)
+    path: 'library',
+    loadChildren: () => import('./library/library.module').then( m => m.LibraryPageModule)
   }
+
 ];
 
 @NgModule({
