@@ -46,6 +46,38 @@ $resultn=mysqli_query($conn,$sqln);
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 
 <body>
 
@@ -60,9 +92,9 @@ $resultn=mysqli_query($conn,$sqln);
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">Sticker</a></li>
-          <li><a href="#services">Application</a></li>
-          <li><a href="#portfolio">Traffic Ticket</a></li>
+          <li><a href="adminSticker.php">Sticker</a></li>
+          <li><a href="adminApplication.php">Application</a></li>
+          <li><a href="adminNotify.php">Traffic Ticket</a></li>
           
 
         </ul>
@@ -75,44 +107,42 @@ $resultn=mysqli_query($conn,$sqln);
 
 <main id="main">
 
-<div class="container">
-      <h2>Sticker Application</h2> 
-      <div class="table-responsive">         
-      <table class="table table-hover">
- 
-        <thead>
-            <tr>
-              <th>Student Name</th>
-              <th>Student Matric</th>              
-              <th>Vehicle Plate</th>
-              <th>Sticker Date</th>
-              <th>Status</th>
-              <th>Operation</th>
-            </tr>
-        </thead>
+  <div class="container">
 
-        <tbody>
+    <h4>Add Lecturer List</h4>
+      <form method="POST" action="adminTicketProcess.php">
 
+        <div class="form-group">
+          <div>
+            
+              <label for="matric">Student ID</label>
+              <input type="text" id="id" name="id" placeholder="Student ID"><br>
+
+              <label for="plate">Vehicle Plate</label>
+              <input type="text" id="plate" name="plate" placeholder="Vehicle Plate"><br>
+
+              <label for="amount">Ticket Amount</label>
+              <input type="number" id="ticket" name="ticket" placeholder="Amount"><br>
+              
+              <label for="desc">Ticket Description</label>
+              <textarea name="comment_text" id="comment_text" class="form-control" cols="30" rows="3"></textarea>
+              
+
+              <input type="submit" value="Submit">
+            
+              
+
+              <!-- <button type="submit" class="btn btn-warning">Submit</button>  -->   
+                      
+                    
+        </div>
+        
+       
     
-        <?php
-            while ($rown=mysqli_fetch_array($resultn))
-            {
-              echo "<tr>";
-              echo "<td>".$rown['student_name']."</td>";
-              echo "<td>".$rown['student_matric']."</td>";
-              echo "<td>".$rown['vehiclePlateNo']."</td>";
-              echo "<td>".$rown['stickerDate']."</td>";
-              echo "<td>".$rown['stickerStatus']."</td>";
-              //echo "<td>".$rown['']."</td>";              
-              echo "</tr>";
-            }
-        ?>
-        </tbody>
+    </form>
 
-   
-      </table>
-    </div>
-  </div>
+
+</div>
   
  
 

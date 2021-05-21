@@ -60,9 +60,9 @@ $resultn=mysqli_query($conn,$sqln);
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">Sticker</a></li>
-          <li><a href="#services">Application</a></li>
-          <li><a href="#portfolio">Traffic Ticket</a></li>
+          <li><a href="adminSticker.php">Sticker</a></li>
+          <li><a href="adminApplication.php">Application</a></li>
+          <li><a href="adminNotify.php">Traffic Ticket</a></li>
           
 
         </ul>

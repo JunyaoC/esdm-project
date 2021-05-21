@@ -3,7 +3,9 @@
 include('../php-folder/connect.php');
 
 
-$sqln = "SELECT * FROM tb_sticker";
+$sqln = "SELECT * FROM tb_sticker
+         LEFT JOIN tb_vehicle ON tb_vehicle.vehicleID = tb_sticker.vehiclePlateNo
+         ";
 $resultn=mysqli_query($conn,$sqln);
 //$rown = mysqli_fetch_array($resultn);
 
@@ -82,7 +84,6 @@ $resultn=mysqli_query($conn,$sqln);
  
         <thead>
             <tr>
-              <th>Student Name</th>
               <th>Student Matric</th>              
               <th>Vehicle Plate</th>
               <th>Sticker Date</th>
@@ -98,8 +99,7 @@ $resultn=mysqli_query($conn,$sqln);
             while ($rown=mysqli_fetch_array($resultn))
             {
               echo "<tr>";
-              echo "<td>".$rown['student_name']."</td>";
-              echo "<td>".$rown['student_matric']."</td>";
+              echo "<td>".$rown['stuACID']."</td>";
               echo "<td>".$rown['vehiclePlateNo']."</td>";
               echo "<td>".$rown['stickerDate']."</td>";
               echo "<td>".$rown['stickerStatus']."</td>";
