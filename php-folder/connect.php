@@ -1,16 +1,19 @@
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$database = "esdm_boilerplate";
+    $servername = "185.185.40.33";
+    $username = "root";
+    $password = "root";
+    $database = "esdm_db";
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $database);
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $database);
 
-	date_default_timezone_set('Asia/Kuala_Lumpur');
+    date_default_timezone_set('Asia/Kuala_Lumpur');
 
-	header('Access-Control-Allow-Origin: *');
-	header('Access-Control-Allow-Credentials: true');
-	header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS");
-	header("Access-Control-Allow-Headers: Origin, Content-Type, Authorization, Accept, X-Requested-With, x-xsrf-token");
-	header("Content-Type: application/json; charset=utf-8");
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
+    echo json_encode("{'message':'Connected successfully'}");
+?>
+
