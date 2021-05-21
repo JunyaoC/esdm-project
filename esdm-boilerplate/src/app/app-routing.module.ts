@@ -16,6 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./home-page/home-page.module').then( m => m.HomePagePageModule)
   },
   {
+
     path: 'library-browse',
     loadChildren: () => import('./library/library-browse/library-browse.module').then( m => m.LibraryBrowsePageModule)
   },
@@ -26,7 +27,12 @@ const routes: Routes = [
   {
     path: 'attendance-details',
     loadChildren: () => import('./attendance-details/attendance-details.module').then( m => m.AttendanceDetailsPageModule)
-  },  {
+  },
+  {
+    path: 'library',
+    loadChildren: () => import('./library/library.module').then( m => m.LibraryPageModule)
+  },
+  {
     path: 'dining',
     loadChildren: () => import('./dining/dining.module').then( m => m.DiningPageModule)
   }
