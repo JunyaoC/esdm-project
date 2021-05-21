@@ -3,7 +3,9 @@
 include('../php-folder/connect.php');
 
 
-$sqln = "SELECT * FROM tb_sticker";
+$sqln = "SELECT * FROM tb_sticker
+         LEFT JOIN tb_vehicle ON tb_vehicle.vehicleID = tb_sticker.vehiclePlateNo
+         ";
 $resultn=mysqli_query($conn,$sqln);
 //$rown = mysqli_fetch_array($resultn);
 
@@ -49,6 +51,7 @@ $resultn=mysqli_query($conn,$sqln);
 
 <body>
 
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
@@ -82,7 +85,6 @@ $resultn=mysqli_query($conn,$sqln);
  
         <thead>
             <tr>
-              <th>Student Name</th>
               <th>Student Matric</th>              
               <th>Vehicle Plate</th>
               <th>Sticker Date</th>
@@ -97,13 +99,22 @@ $resultn=mysqli_query($conn,$sqln);
         <?php
             while ($rown=mysqli_fetch_array($resultn))
             {
+              $date = $rown['stickerDate'] ;
+              $timestamp = strtotime($date);
+              $ddate =  date('d/m/Y', $timestamp);
+
+
+              $a = $rown['stickerID'];
               echo "<tr>";
-              echo "<td>".$rown['student_name']."</td>";
-              echo "<td>".$rown['student_matric']."</td>";
+              echo "<td>".$rown['stuACID']."</td>";
               echo "<td>".$rown['vehiclePlateNo']."</td>";
-              echo "<td>".$rown['stickerDate']."</td>";
+              echo "<td>" .$ddate. "</td>";
               echo "<td>".$rown['stickerStatus']."</td>";
-              //echo "<td>".$rown['']."</td>";              
+              echo "<td>";
+                          echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                  Update
+                                </button>';
+                          echo "</td>";             
               echo "</tr>";
             }
         ?>
@@ -112,12 +123,12 @@ $resultn=mysqli_query($conn,$sqln);
    
       </table>
     </div>
+
+
   </div>
   
  
-
-
-   
+   </main>
 
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
   <div id="preloader"></div>
@@ -136,6 +147,50 @@ $resultn=mysqli_query($conn,$sqln);
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+<!--   MODAL for Register -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 style="align-self: "> Update Application </h4>
+          <button type="button btn-primary" class="close" data-dismiss="modal">×</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+        <form method="POST" action="stickerprocess.php">
+
+
+        <div class="form-group">
+        <label for="Role">Role</label> <br>
+        
+        <select class="form-control" id="status" name="status">
+               
+               <option value= 'Activate'>Activate</option>
+               <option value= 'Rejected'>Rejected</option>
+               <option value= 'Payment Pending'>Payment Pending</option>
+        
+                </div>
+
+        <input type="hidden"  id="sid" name="sid" value= "<?php echo $a; ?>'">
+        <br><br>
+        
+        </div>
+           <!-- Modal footer -->
+        <div class="modal-footer">
+        <button type="submit" class="button btn-info">Update</button>
+        </form>
+        </select>
+
+        <button type="button" class="button btn-danger" data-dismiss="modal">Close</button>
+        </div>         
+            </div>
+            </div>
+        </div>
+
+
 
 </body>
 
