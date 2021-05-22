@@ -51,7 +51,7 @@ include('includes/config.php');
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                         <a class="dashboard-stat bg-primary" href="">
 <?php 
-$sql1 ="SELECT program_id from tblprogram";
+$sql1 ="SELECT r_id from tb_resource";
 $query1 = $dbh -> prepare($sql1);
 $query1->execute();
 $results1=$query1->fetchAll(PDO::FETCH_OBJ);
@@ -59,7 +59,7 @@ $totalprogram=$query1->rowCount();
 ?>
 
                                             <span class="number counter"><?php echo htmlentities($totalprogram);?></span>
-                                            <span class="name">Total academic Program</span>
+                                            <span class="name">Total Resource</span>
                                             <span class="bg-icon"><i class="fa fa-users"></i></span>
                                         </a>
                                         <!-- /.dashboard-stat -->
@@ -69,35 +69,21 @@ $totalprogram=$query1->rowCount();
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                         <a class="dashboard-stat bg-danger" href="">
 <?php 
-$sql ="SELECT lecturer_id from  tblecturer ";
+$sql ="SELECT category_id from  tb_category ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $totallecturer=$query->rowCount();
 ?>
                                             <span class="number counter"><?php echo htmlentities($totallecturer);?></span>
-                                            <span class="name">Total Lecturers</span>
+                                            <span class="name">Total Category</span>
                                             <span class="bg-icon"><i class="fa fa-ticket"></i></span>
                                         </a>
                                         <!-- /.dashboard-stat -->
                                     </div>
                                     <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
-                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <a class="dashboard-stat bg-warning" href="">
-                                        <?php 
-$sql2 ="SELECT committee_id from  tblcommittee ";
-$query2 = $dbh -> prepare($sql2);
-$query2->execute();
-$results2=$query2->fetchAll(PDO::FETCH_OBJ);
-$totalcommittee=$query2->rowCount();
-?>
-                                            <span class="number counter"><?php echo htmlentities($totalcommittee);?></span>
-                                            <span class="name">Total Committies</span>
-                                            <span class="bg-icon"><i class="fa fa-bank"></i></span>
-                                        </a>
-                                        <!-- /.dashboard-stat -->
-                                    </div>
+                                    
                                     <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
                 
